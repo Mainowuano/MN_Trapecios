@@ -1,0 +1,46 @@
+@startuml Trapecios 
+
+Package Trapecios{
+class Datos
+class Newtoncotes
+class p1
+class Opc
+class p2
+class main
+}
+
+class main{
+}
+
+class Datos{
++ double pedirNumero()
++ int pedirEntero()
+} 
+
+Class Newtoncotes {
+-double lower_limit
+-double upper_limit
+-int num_intervals
+}
+
+class p1{
++void pedirdato()
+}
+
+class Opc{
+-double lower_limit
+-double upper_limit
+-int num_intervals
++ Newtoncotes()
+}
+
+class p2{
++ void Operaciones()
+}
+
+'Relaciones entre clases' 
+main o-- Opc
+Opc o-- Datos
+Datos *-- p1
+Opc *-- p2
+Opc *-- Newtoncotes
